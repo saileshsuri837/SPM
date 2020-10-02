@@ -9,7 +9,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "SwiftPackage",
-            targets: ["SwiftPackage"]),
+            targets: ["SwiftPackage", "Payment"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -21,6 +21,7 @@ let package = Package(
         .target(
             name: "SwiftPackage",
             dependencies: []),
+        .binaryTarget(name: "Payment", path: "archives/Payment.xcframework"),
         .testTarget(
             name: "SwiftPackageTests",
             dependencies: ["SwiftPackage"]),
